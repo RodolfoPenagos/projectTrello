@@ -53,13 +53,14 @@
 
            </div>
            <div class="mdl-cell mdl-cell--12-col">
+             <!-- Card Container -->
              <div id="card-container" class="mdl-grid">
                
                <div id="demo-card" class="demo-card-wide mdl-card mdl-shadow--6dp mdl-cell mdl-cell--4-col" style="display:none;">
-                   <div class="mdl-card__title">
-                     <h2 class="mdl-card__title-text">Welcome</h2>
+                   <div id="demo-title-container" class="mdl-card__title mdl-card--border">
+                     <h2 id="demo-title" class="mdl-card__title-text">Welcome</h2>
                    </div>
-                   <div class="mdl-card__supporting-text">
+                   <div id="demo-description" class="mdl-card__supporting-text">
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                      Mauris sagittis pellentesque lacus eleifend lacinia...
                    </div>
@@ -86,16 +87,39 @@
       </main>
 
     </div>
+    <!-- New Card Dialog -->
     <dialog id="card-dialog" class="mdl-dialog">
-      <h4 class="mdl-dialog__title">Allow data collection?</h4>
-      <div class="mdl-dialog__content">
-        <p>
-          Allowing us to collect data will let us get you the information you want faster.
-        </p>
-      </div>
+      <!-- Textfield with Floating Label -->
+
+      <form action="#">
+        <!-- Card Title  -->
+        <h4 class="mdl-dialog__title">
+          New Card
+        </h4>
+        <!-- Card Content -->
+        <div class="mdl-dialog__content">
+          <!-- Card Title -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="title">
+            <label class="mdl-textfield__label" for="title">Title</label>
+          </div>
+          <!-- Card Descrption -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="description"></textarea>
+            <label class="mdl-textfield__label" for="descrption">Descrption</label>
+          </div>
+          <!-- Card Assignee -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="assignee">
+            <label class="mdl-textfield__label" for="assignee">Assignee</label>
+          </div>
+
+        </div>
+      </form>
+  
       <div class="mdl-dialog__actions">
-        <button id="create-card" type="button" class="mdl-button">Agree</button>
-        <button id="cancel" type="button" class="mdl-button close">Disagree</button>
+        <button id="create-card" type="button" class="mdl-button">Create</button>
+        <button id="cancel" type="button" class="mdl-button close">Cancel</button>
       </div>
     </dialog>
   </body>

@@ -10,11 +10,18 @@ a {
   text-align: right;
 }
 
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 176px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png') center / cover;
+
+#card-dialog{
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+
 }
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+@media (max-width: 475px){
+  #card-dialog{
+    width: 250px;
+    height: 450px;
+
+  }
+
 }
