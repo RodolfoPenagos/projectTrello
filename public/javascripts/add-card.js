@@ -15,6 +15,8 @@ $(document).ready(function(){
 
         let newDesc = $('#description').val()
 
+        let newAssignee = $('#assignee').val()
+
         let title = newCard.find('#demo-title-container').find('#demo-title')
         title.html(newTitle)
 
@@ -22,11 +24,15 @@ $(document).ready(function(){
         let description = newCard.find('#demo-description')
         description.html(newDesc)
 
+        let assignee = newCard.find('#demo-assignee')
+        assignee.html(newAssignee)
+
         newCard.appendTo( "#card-container" ).fadeIn()
         dialog.close()
 
         $('#title').val('')
         $('#description').val('')
+        $('#assignee').val('')
     })
 
     $('#cancel').click(function(){
