@@ -2,10 +2,10 @@
 var mongoose = require('mongoose');
 
     var boardSchema = mongoose.Schema({
-            company: String,
-            projectName: String,
-            description: String,
-            githubRepo: String
+            company: {type: String, required: true},
+            projectName: {type: String, required: true},
+            description: {type: String, required: true},
+            githubRepo: {type: String, required: true}
     });
 
     var Board = mongoose.model('Board', boardSchema);

@@ -7,13 +7,15 @@ var mongoose = require('mongoose');
         assignee: String
     });
 
-    var Card = mongoose.model('columns', cardSchema);
+    var Card = mongoose.model('card', cardSchema);
 
-    var firstCard = new Card ({ name: 'First Card', description: 'holaaa', assignee: 'Jarcor'});
-    console.log(firstCard); // 'Silence'
+    module.exports = Card
 
-    firstCard.save(function (err, firstCard) {
-        if (err) return console.error(err);
-        console.log('Saved');
-        process.exit()
-        });
+    // var firstCard = new Card ({ name: 'First Card', description: 'holaaa', assignee: 'Jarcor'});
+    // console.log(firstCard); // 'Silence'
+
+    // firstCard.save(function (err, firstCard) {
+        // // if (err) return console.error(err);
+        // console.log('Saved');
+        // process.exit()
+        // });
