@@ -5,10 +5,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="/stylesheets/dialog-polyfill.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="/javascripts/add-card.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/javascripts/dialog-polyfill.js"></script>
+    
   </head>
   <body>
     <!-- Always shows a header, even in smaller screens. -->
@@ -42,7 +45,7 @@
 
         <div class="page-content">
          <div class="mdl-grid">
-           <div class="mdl-cell mdl-cell--12-col text-right">
+           <div class="mdl-cell mdl-cell--12-col">
             <!-- Colored FAB button with ripple -->
             <button id="add-card" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
               <i class="material-icons">add</i>
@@ -83,5 +86,17 @@
       </main>
 
     </div>
+    <dialog class="mdl-dialog">
+      <h4 class="mdl-dialog__title">Allow data collection?</h4>
+      <div class="mdl-dialog__content">
+        <p>
+          Allowing us to collect data will let us get you the information you want faster.
+        </p>
+      </div>
+      <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button">Agree</button>
+        <button type="button" class="mdl-button close">Disagree</button>
+      </div>
+    </dialog>
   </body>
 </html>
