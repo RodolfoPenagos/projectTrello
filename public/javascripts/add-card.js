@@ -17,22 +17,50 @@ $(document).ready(function(){
 
         let newAssignee = $('#assignee').val()
 
-        let title = newCard.find('#demo-title-container').find('#demo-title')
-        title.html(newTitle)
+        var data = {
+            name: newTitle,
+            description: newDesc,
+            assignee: newAssignee
 
-        
-        let description = newCard.find('#demo-description')
-        description.html(newDesc)
+        }
 
-        let assignee = newCard.find('#demo-assignee')
-        assignee.html(newAssignee)
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost:3000',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            
+          }).done(function(result){
+              if(result != 'fail request'){
 
-        newCard.appendTo( "#card-container" ).fadeIn()
-        dialog.close()
+                  console.log(result)
+                  console.log(result.name)
+                  console.log(result.description)
+                  console.log(result.assignee)
+      
+                  let title = newCard.find('#demo-title-container').find('#demo-title')
+                  title.html(result.name)
+          
+                  let description = newCard.find('#demo-description')
+                  description.html(result.description)
+          
+                  let assignee = newCard.find('#demo-assignee')
+                  assignee.html(result.assignee)
+      
+                  newCard.appendTo( "#card-container" ).fadeIn()
+                  dialog.close()
+      
+      
+                  $('#title').val('')
+                  $('#description').val('')
+                  $('#assignee').val('')
+              } else {
+                  console.log(result)
+              }
+              
+          });
+          
 
-        $('#title').val('')
-        $('#description').val('')
-        $('#assignee').val('')
     })
 
     $('#cancel').click(function(){

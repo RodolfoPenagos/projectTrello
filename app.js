@@ -39,11 +39,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // // app.use('/', index);
 // app.use('/users', users);
 router.post('/',function(req,res,next){
-   var firstCard = new Card ({ name: req.body.title, description: req.body.description, assignee: req.body.assignee});
+   var firstCard = new Card ({ name: req.body.name, description: req.body.description, assignee: req.body.assignee});
     console.log(firstCard); // 'Silence'
 
     firstCard.save(function (err, card) {
-        if (err) return console.error(err);
+        if (err){
+          res.send('fail request')
+          return console.error(err);
+        } 
         console.log('Saved');
         res.send(card)
         });

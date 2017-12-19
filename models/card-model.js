@@ -2,9 +2,9 @@
 var mongoose = require('mongoose');
 
     var cardSchema = mongoose.Schema({
-        name: String,
-        description: String,
-        assignee: String
+        name: {type: String, required: true},
+        description: {type: String, required: true},
+        assignee: {type: String, required: true}
     });
 
     var Card = mongoose.model('card', cardSchema);
